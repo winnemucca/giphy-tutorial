@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+$background-color-welcome: #041F36;
+$text-color-welcome: #FFEE6F;
+body {
+  background: $background-color-welcome;
+  color: $text-color-welcome;
+  font-family: 'Lato', sans-serif;
+}
+
+app-welcome {
+  width: 100%;
+}
+
+// remove once refactored 
+$table-color-text: #fff;
+
+.table {
+  color: $table-color-text;
+}
+
+

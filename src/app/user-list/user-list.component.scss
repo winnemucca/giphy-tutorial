@@ -1,0 +1,31 @@
+$table-color-text: #fff;
+$font-color-remove: red;
+$font-color-update: #FFEE6F;
+
+.table {
+  color: $table-color-text;
+
+  .table-list {
+    &__actions {
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+    }
+
+    &--remove-icon {
+      color: $font-color-remove;
+    }
+
+    &--update-icon {
+      color: $font-color-update
+    }
+
+    &__email {
+      width: 55%;
+    }
+  }
+}
+
+.modal-header, .modal-body {
+  color: #000000;
+}

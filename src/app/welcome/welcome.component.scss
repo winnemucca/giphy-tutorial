@@ -1,0 +1,12 @@
+.welcome{
+  &__title {
+    font-size: 62px;
+    text-align: center;
+  }
+}
+
+.main-section {
+  .btn-group {
+    display: flex;
+  }
+}

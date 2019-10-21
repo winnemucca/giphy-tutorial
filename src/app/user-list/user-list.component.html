@@ -1,0 +1,69 @@
+<table *ngIf="list" class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">email</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-list" *ngFor="let user of list; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{user?.FirstName}}</td>
+      <td>{{user?.LastName}}</td>
+      <td class="table-list__email">{{user?.EmailAddress}}</td>
+      <td class="table-list__actions">
+        <fa-icon
+            class="table-list--remove-icon"
+            (click)="deleteUser(user)"
+            [icon]="faUserMinus"
+            [size]="lg">
+        </fa-icon>
+        <fa-icon
+            class="table-list--update-icon"
+            (click)="openModalComponent(template , user)"
+            [icon]="faUserEdit"
+            [size]="lg">
+        </fa-icon>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Update User Information</h4>
+  </div>
+  <form [formGroup]="myForm">
+    <div class="modal-body">
+      <div class="container">
+        <div class="form-group">
+          <label for="FirstName">First Name</label>
+          <input type="text"
+            class="form-control"
+            formControlName="FirstName" />
+        </div>
+        <div class="form-group">
+          <label for="LastName">Last Name</label>
+          <input type="text" class="form-control" formControlName="LastName">
+        </div>
+        <div>
+          <label for="EmailAddress">Email Address</label>
+          <input type="email" class="form-control" formControlName="EmailAddress">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        aria-label="Close"
+        (click)="updateUser()"
+        class="btn btn-success"
+        [disabled]="!myForm.valid">
+        Submit Form
+      </button>
+    </div>
+  </form>
+</ng-template> -->
+

@@ -1,0 +1,11 @@
+<h3>User Search List</h3>
+<main class="main-section">
+  <section>
+    <app-user-list
+      (listItemUpdate)="updateWelcomeListUser($event)"
+      (listItemDelete)="deleteWelcomeListUser($event)"
+      *ngIf="welcomelist"
+      [list]="welcomelist">
+    </app-user-list>
+  </section>
+</main>
