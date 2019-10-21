@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {Observable, Subject, pipe} from 'rxjs';
+import { GiphyService } from '../gipy-service.service';
+import {pipe} from 'rxjs';
 import {
-  delay,
   debounceTime,
-  catchError,
-  map,
-  takeWhile,
   tap,
   distinctUntilChanged,
-  switchMap,
-  flatMap,
   mergeMap,
 } from 'rxjs/operators';
 
@@ -23,10 +18,14 @@ export class GiphySearchComponent implements OnInit {
   giphyForm: FormGroup;
   results;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private giphyService: GiphyService,
+    private formBuilder: FormBuilder
+    ) { }
 
   ngOnInit() {
     this.createForm();
+    this.giphyObserve();
   }
 
   giphyObserve() {
@@ -34,12 +33,14 @@ export class GiphySearchComponent implements OnInit {
       .pipe(
         debounceTime(400),
         distinctUntilChanged(),
+        mergeMap(term => this.giphyService.getResults(term)),
+        tap(x => console.log('giphy results', x))
       ).subscribe( data => this.results = data);
   }
 
   private createForm(): void {
-    this.formBuilder.group({
-      search: this.formBuilder.group
+    this.giphyForm = this.formBuilder.group({
+      term: ''
     });
   }
 

@@ -22,4 +22,10 @@ describe('UserListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('updateUser', () => {
+    it('should emit user info', () {
+      
+    });
+  });
 });

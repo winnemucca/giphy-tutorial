@@ -1,7 +1,17 @@
-<p>giphy-search works!</p>
 <main class="container-fluid">
-  <section>
-    <form [formGroup]="giphyForm">
+  <section class="row">
+    <header class="d-flex mt-3 header-container">
+      <h3>Giphy Search</h3>
+    </header>
+    <div class="directions-container">
+      <p class="directions-container__info">Looking for a funny idea to put on slack or teams? </p>
+    </div>
+  </section>
+  <section class="row">
+    <form
+      class="form-container"
+      *ngIf="giphyForm"
+      [formGroup]="giphyForm">
       <div class="form-group">
         <input
           formControlName="term"
@@ -10,5 +20,10 @@
           class="form-control">
       </div>
     </form>
+  </section>
+  <section class="row">
+    <div class="card" *ngFor="let g of results?.data">
+        <img src="{{g.images.original.url}}">
+    </div>
   </section>
 </main>

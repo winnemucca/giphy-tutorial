@@ -4,8 +4,6 @@ import { WelcomeList } from '../welcome/welcome.model';
 import { faUserMinus, faUserEdit } from '@fortawesome/free-solid-svg-icons';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
-
-
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',

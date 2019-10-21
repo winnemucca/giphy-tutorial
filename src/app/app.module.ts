@@ -23,7 +23,9 @@ import { GiphySearchRoutingModule } from './giphy-search/giphy-search-routing.mo
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(DataService),
+    InMemoryWebApiModule.forRoot(DataService, {
+      passThruUnknownUrl: true
+    }),
     ModalModule.forRoot(),
     TabsModule.forRoot(),
     WelcomeRoutingModule,
