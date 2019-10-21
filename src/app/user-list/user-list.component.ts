@@ -49,7 +49,7 @@ export class UserListComponent implements AfterViewInit {
     this.modalRef = this.modalService.show(template);
   }
 
-  private createForm(user: WelcomeList ) {
+  public createForm(user: WelcomeList ) {
     // todo fix casing style for user
     this.userId = user.id;
     this.myForm = this.formBuilder.group({

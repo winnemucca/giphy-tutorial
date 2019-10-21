@@ -27,7 +27,6 @@ import { GiphySearchRoutingModule } from './giphy-search/giphy-search-routing.mo
       passThruUnknownUrl: true
     }),
     ModalModule.forRoot(),
-    TabsModule.forRoot(),
     WelcomeRoutingModule,
     GiphySearchRoutingModule
   ],

@@ -1,12 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GipyServiceService } from './gipy-service.service';
+import { GiphyService } from './gipy-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
-describe('GipyServiceService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+describe('GiphyService', () => {
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [
+      HttpClientModule
+    ]
+  }));
 
   it('should be created', () => {
-    const service: GipyServiceService = TestBed.get(GipyServiceService);
+    const service: GiphyService = TestBed.get(GiphyService);
     expect(service).toBeTruthy();
   });
 });
